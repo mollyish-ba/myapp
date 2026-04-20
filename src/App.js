@@ -1,4 +1,5 @@
 import logo from './logo.svg';
+import { BrowserRouter, Routes, Route, Link } from 'react-router-dom';
 import './App.css';
 import Firstcomponent from './Components/Firstcomponent';
 import Taskcomponent from './Components/Taskcomponent';
@@ -6,27 +7,45 @@ import Recapday1 from './Components/Recapday1';
 import Productscomponent from './Components/Productscomponent';
 import Secondcomponent from './Components/Secondcomponent';
 import Thirdcomponent from './Components/Thirdcomponent';
+import Fourthcomponent from './Components/Fourthcomponent';
+import Fifthcomponent from './Components/Fifthcomponent';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <h1>Introduction to ReactJS</h1>
-      </header>
-      <h2>About Me</h2>
-      <p>I like reading novels, My favourite characters so far are: Reed Merrick and Lilith Whitlock. My biggest drive in life is making money and living THEE life.</p>
-      <h3>Dream Destinations</h3>
-      <p>I have always wanted to see the level of dirt in River Hudson. I would like to see the cherry blossoms in Japan.</p>
-      <h4>Favourite Artists</h4>
-      <p>My favourite artists vary with the type of mood I'm in. For example NF is the best virtual therapist anyone can ask for. But in order to get into it you have to gladly receive the truth unguarded facts he spits out when he raps.</p>
+    <BrowserRouter>
 
-      <Firstcomponent/>
-      <Taskcomponent/>
-      <Recapday1/>
-      <Productscomponent/>
-      <Secondcomponent/>
-      <Thirdcomponent/>
-    </div>
+      <div className="App">
+        <header className="App-header">
+          <h1>Introduction to ReactJS</h1>
+        </header>
+
+        {/* Nav links goes here  */}
+
+        <nav>
+          <Link to = "/first" > First Component </Link>
+          <Link to = "/second" > Second Component </Link>
+          <Link to = "/third" > Third Component </Link>
+          <Link to = "/recap" > Recap Component </Link>
+          <Link to = "/task" > Task Component </Link>
+          <Link to = "/products" > Products Component </Link>
+          <Link to = "/fourth" > Fourth Component </Link>
+          <Link to = "/fifth" > Fifth Component </Link>
+        </nav>
+
+        <Routes>
+            <Route path ='/first' element = {< Firstcomponent />} />
+            <Route path ='/second' element = {< Secondcomponent />} />
+            <Route path ='/third' element = {< Thirdcomponent />} />
+            <Route path ='/recap' element = {< Recapday1 />} />
+            <Route path ='/task' element = {< Taskcomponent />} />
+            <Route path ='/products' element = {< Productscomponent />} />
+            <Route path ='/fourth' element = {< Fourthcomponent />} />
+            <Route path = '/fifth' element = {< Fifthcomponent />} />
+
+        </Routes>
+
+      </div>
+    </BrowserRouter>
   );
 }
 
